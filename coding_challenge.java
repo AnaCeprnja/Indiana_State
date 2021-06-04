@@ -3,6 +3,9 @@ import java.util.*;
 import java.text.*;
 import java.math.*;
 import java.util.regex.*;
+import java.security.*;
+import java.util.concurrent.*;
+
 
 //problem two
 //https://www.hackerrank.com/challenges/30-loops/problem
@@ -33,8 +36,7 @@ public class Solution {
        		for (int i = 0; i < length; i++) {
             	array[i] = sc.nextInt();
         	}
-        
-        	// Var holding our new string
+
         	String result = "";
         
         	for (int i = array.length - 1; i >= 0; i--) {
@@ -44,3 +46,21 @@ public class Solution {
         	System.out.println(result);
     	}
 	}
+
+
+// Problem four
+// https://www.hackerrank.com/challenges/30-recursion/problem
+
+public class Solution {
+
+    public static int factorial(int n){
+        return (n > 1) ? n * factorial(n - 1) : 1;
+    }
+    
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int n = scan.nextInt();
+        scan.close();
+        System.out.println(factorial(n));
+    }
+}
